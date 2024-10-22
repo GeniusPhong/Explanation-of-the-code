@@ -170,12 +170,13 @@ shake với thời gian 0.5s, làm mượt thei cách in and out */
     }
 }
 
-.input:not(:placeholder-shown){
-    animation: glich 1s linear infinite; /* Áp dụng animation glitch khi input có 
+.input:not(:placeholder-shown) {
+    animation: glitch 1s linear infinite; /* Áp dụng animation glitch khi input có 
     giá trị, lặp lại vô hạn*/
 }
 
-.input-container::after{
+
+.input-container::after {
     content: "|";
     position: absolute;
     right: 10px;
@@ -185,19 +186,18 @@ shake với thời gian 0.5s, làm mượt thei cách in and out */
     animation: blink 0.7s step-end infinite;
 }
 
-@keyframes blink{
-    50%{
-        opacity: 0; /* Tại 50% của animation, làm caret mờ đi*/
+@keyframes blink {
+    50% {
+        opacity: 0;
     }
 }
 
-.input:focus + .input-container::after{
-    color: #fff; /*Khi input được focus, đổi màu caret thành màu trắng*/
+.input:focus + .input-container::after {
+    color: #fff;
 }
 
-.input:not(:placeholder-shown){
-    font-weight: bold; /*Khi input có giá trị, đổi font cho thành in đậm*/
-    letter-spacing: 1px; /*Tăng khoảng cách giữa các chữ cái lên 1px*/
-    text-shadow: 0px 0px 0 #000;/*Không có bóng chữ, có thể tạo không
-    gian cho các hiệu ứng sau*/
+.input:not(:placeholder-shown) {
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 0 #000;
 }
